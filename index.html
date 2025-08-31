@@ -1,76 +1,160 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>ArchiveBox</title>
-  <style>
-    body {
-      font-family: "Roboto", "Noto Sans SC", sans-serif;
-      margin: 0;
-      background-color: #121212;
-      color: #ffffff;
-    }
-    header {
-      text-align: center;
-      padding: 50px 20px 30px 20px;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      color: #00bcd4;
-    }
-    header p {
-      margin: 10px 0 0 0;
-      color: #aaaaaa;
-    }
-    main {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
-    }
-    .btn {
-      width: 200px;
-      height: 80px;
-      background-color: #1f1f1f;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1em;
-      font-weight: bold;
-      color: #00bcd4;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background-color: #00bcd4;
-      color: #121212;
-    }
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchiveBox Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .os-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .os-filter {
+            background-color: #1e1e1e;
+            border: none;
+            color: #e0e0e0;
+            padding: 8px 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .os-filter:hover {
+            background-color: #333;
+        }
+        .os-filter.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .hidden {
+            display: none !important;
+        }
+        h1 {
+            color: #00bcd4;
+            text-align: center;
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+        .file-list {
+            margin-top: 20px;
+        }
+        .file-item {
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .download-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #388E3C;
+        }
+        .file-size {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .no-files {
+            text-align: center;
+            margin-top: 40px;
+            color: #aaa;
+        }
+        .promotion {
+            margin-top: 40px;
+            text-align: center;
+            padding: 10px;
+        }
+        .promo-link {
+            display: inline-block;
+            padding: 10px 30px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .promo-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+        }
+        .promo-text {
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+        .promo-icon {
+            margin-left: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .promo-link:hover .promo-icon {
+            transform: translateX(3px);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ArchiveBox</h1>
-    <p>免费资源下载中心</p>
-  </header>
+    <h1>ArchiveBox 下载中心</h1>
+    <div class="os-filters">
+        <button class="os-filter active" data-os="all">All</button>
+    </div>
+    <div class="file-list">
+        <div class="file-item" data-os="all">
+            <div class="file-info">
+                <div class="file-name">Apple.Intelligence.shortcut</div>
+                <div class="file-size">下载文件 - 更新日期: 2025-08-31</div>
+            </div>
+            <a href="https://github.com/BOOMDEE/ArchiveBox/releases/download/0/Apple.Intelligence.shortcut" class="download-btn" download>Download</a>
+        </div>
+    </div>
+    <div class="promotion">
+        <a href="https://github.com/BOOMDEE/ArchiveBox/releases" target="_blank" class="promo-link">
+            <span class="promo-text">Github</span>
+            <span class="promo-icon">➔</span>
+        </a>
+    </div>
 
-  <main>
-    <a class="btn" href="https://github.com/BOOMDEE/ArchiveBox/releases/download/0/Apple.Intelligence.shortcut" download>
-      Apple.Intelligence.shortcut
-    </a>
-  </main>
-
-  <footer>
-    本站所有文件仅供个人/学习使用。
-  </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filters = document.querySelectorAll(".os-filter");
+            const fileItems = document.querySelectorAll(".file-item");
+            
+            filters.forEach(filter => {
+                filter.addEventListener("click", function() {
+                    const os = this.getAttribute("data-os");
+                    filters.forEach(btn => btn.classList.remove("active"));
+                    this.classList.add("active");
+                    
+                    fileItems.forEach(item => {
+                        const itemOS = item.getAttribute("data-os");
+                        if (os === "all" || itemOS === os) {
+                            item.classList.remove("hidden");
+                        } else {
+                            item.classList.add("hidden");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

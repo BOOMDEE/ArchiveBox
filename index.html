@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>ArchiveBox</title>
+  <!-- Google Material 3 CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/@material/web@latest/dist/mdc.css">
+  <style>
+    body {
+      font-family: "Roboto", "Noto Sans SC", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #6750a4;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      font-weight: 500;
+    }
+    p {
+      margin-top: 20px;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ArchiveBox</h1>
+    <p>ArchiveBox 免费资源下载中心</p>
+  </header>
+
+  <main>
+    <p>点击下面的按钮即可下载资源：</p>
+    <!-- Material 3 按钮 -->
+    <md-button raised class="mdc-button mdc-button--raised" id="downloadBtn">
+      下载 Apple.Intelligence.shortcut
+    </md-button>
+  </main>
+
+  <footer>
+    本站所有文件仅供个人/学习使用。
+  </footer>
+
+  <!-- Material Web JS -->
+  <script type="module">
+    import {MDCRipple} from 'https://unpkg.com/@material/web@latest/ripple/ripple.js';
+    const button = document.querySelector('#downloadBtn');
+    const ripple = new MDCRipple(button);
+
+    // 点击按钮跳转到下载链接
+    button.addEventListener('click', () => {
+      window.open('https://github.com/BOOMDEE/ArchiveBox/releases/download/0/Apple.Intelligence.shortcut', '_blank');
+    });
+  </script>
+</body>
+</html>
